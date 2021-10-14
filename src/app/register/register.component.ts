@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
   }
   optios = ["1","sdsds","sdsdsas","rwerwe","dsdas","dsadsa","SDSADSA"]
   showopt1!: boolean;
-  selecOpt(){
+  selecOpt(data:any){
     if(this.profileForm.value['state'] === "Option2"){
       this.showopt1 = true;
     } else{
