@@ -1,0 +1,45 @@
+<div class="col-md-6 col-md-offset-3">
+    <form [formGroup]="UserInput">
+        <div class="form-group">
+            <label for="state" >State</label>
+            <select class="form-control" id="state" name="state" (change)= "selected()"  formControlName="state" required>
+                <option  
+               *ngFor='let option of states' 
+               [value]="option.state_id">{{option.state_name}}</option>
+              </select>
+         </div>
+         <div class="form-group">
+            <label for="district" >district</label>
+            <select class="form-control" id="district" name="district"  formControlName="district" required>
+                <option  
+               *ngFor='let option of districts' 
+               [value]="option.district_id">{{option.district_name}}</option>
+              </select>
+         </div>
+         <div class="form-group">
+            <label for="ageGroup">Age Group</label>
+        <select class="form-control" id="ageGroup" name="ageGroup" formControlName="ageGroup" required>
+            <option value=18>18+</option>
+            <option value=45>45+</option>
+          </select>
+        </div>
+         <div class="form-group">
+            <label for="Dose" >Dose</label>
+            <select class="form-control" id="Dose" name="Dose" formControlName="Dose" required>
+              <option  value="Dose1">Dose1</option>
+              <option value="Dose2">Dose2</option>
+            </select>
+         </div>
+         <div>
+            <button class="btn btn-primary" type="button" (click)="onRegiter()"  [disabled]="!UserInput.valid">Check Availability</button> 
+        </div>
+    </form>
+   
+    <div *ngIf="slot"  style="text-align: center;">
+     <p>Slot is available</p>
+        <img src="https://media.tenor.com/images/d2d680c2e646c6aca62a09a7232ca0ce/tenor.gif" width="100px" height="100px" alt="">
+    </div>
+    <div *ngIf="!slot && printSlotData" >
+        <p> No Slot is available" </p>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="col-md-8 col-md-offset-3">
+    <form [formGroup]="profileForm">
+    <div class="form-group">
+        <label for="state" >State</label>
+            <select class="form-control" id="state" name="state" (change)="selecOpt($event)" formControlName="state">
+                <option>MX Action Settings</option>
+                <option>Scanner Automation settings</option>
+              </select>
+
+              <ng-container *ngIf="this.profileForm.value['state'] === 'MX Action Settings'">
+                  <p>option one itmes</p>
+              </ng-container>
+
+              <ng-container *ngIf="this.profileForm.value['state'] === 'Scanner Automation settings'">
+                  <div class="row">
+                      <div class="col-md-2">
+                        <select class="form-control" id="12opt" name="12opt"  formControlName="opt" required>
+                            <option  *ngFor='let option of optios' >{{option}}</option>
+                          </select>
+                      </div>
+                      <div class="col-md-9">
+                          <table>
+                              <tr style="margin-bottom: 20px;">
+                                  <th><label style="margin-bottom: 20px;" style="margin-right: 5px;" for="">Color</label></th>
+                                  <th><label style="margin-bottom: 20px;"  for="">Toms-X-offset</label></th>
+                                  <th><label style="margin-bottom: 20px;"  for="">Toms-X-offset</label></th>
+                                  <th><label style="margin-bottom: 20px;"  for="">Toms-X-offset</label></th>
+                                  <th><label style="margin-bottom: 20px;"  for="">Toms-X-offset</label></th>
+                                  <th><label style="margin-bottom: 20px;"  for="">Toms-X-offset</label></th>
+                              </tr>
+                              <tr>
+                                  <td><label class="mr-3" style="margin-right: 5px;" for="">Red</label></td>
+                                  <td><input class="form-control" type="text"></td>
+                                  <td><input class="form-control" type="text"></td>
+                                  <td><input class="form-control" type="text"></td>
+                                  <td><input class="form-control" type="text"></td>
+                                  <td><input class="form-control" type="text"></td>
+                              </tr>
+                              <tr>
+                                <td><label class="form-control" class="mr-3" style="margin-right: 5px;" for="">Yellow</label></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="mr-3" style="margin-right: 5px;" for="">Orange</label></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-control" class="mr-3" style="margin-right: 5px;" for="">Green</label></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                                <td><input class="form-control" type="text"></td>
+                            </tr>
+                          </table>
+                      </div>
+                  </div>
+              </ng-container>
+
+
+
+
+
+              <!-- <label for="state" >State</label>
+            <select class="form-control" id="state" name="state" (change)= "selected()"  formControlName="state" required>
+                <option  
+               *ngFor='let option of states' 
+               [value]="option.state_id">{{option.state_name}}</option>
+              </select> -->
+
+
+<!-- 
+    <label for="text">Name</label>
+    <input class="form-control" type="text" (input)= "inputfn($event)" formControlName="name">
+    </div>
+    <div class="form-group">
+    <label for="number">Number</label>  
+    <input class="form-control" type="number" name="number" formControlName="number">  -->
+    </div>
+    <div >
+        <button class="btn btn-default" type="button" [disabled]="disPro" (click)="onRegiter()">Register</button>
+    </div>
+    
+    </form>
+</div>
+   
